@@ -14,26 +14,20 @@ pipeline {
         stage('Checkout') {
             steps {
                 // Checkout code from the repository
-                checkout scm
+              git'https://github.com/SitaraMohan/Demo_1.git'
             }
         }
 
         stage('Build') {
             steps {
                 // Build your application
-                script {
-                    // Example build command
-                    sh './build.sh'  // Replace with your actual build command
-                }
+               bat 'echo "Building the application......." '
             }
         }
 
         stage('Test') {
             steps {
-                // Run tests
-                script {
-                    // Example test command
-                    sh './test.sh'  // Replace with your actual test command
+                bat 'echo "Running tests...." '
                 }
             }
         }
@@ -41,9 +35,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 // Deploy your application
-                script {
-                    // Example deploy command
-                    sh './deploy.sh'  // Replace with your actual deploy command
+                  bat 'echo "Deploying the application...." '
                 }
             }
         }
